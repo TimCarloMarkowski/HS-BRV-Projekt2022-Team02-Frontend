@@ -1,0 +1,24 @@
+{
+  "name": "realtime-chart-websockets",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run start:client & npm run start:server",
+    "start:client": "parcel src/index.html",
+    "start:server": "nodemon src/server.js"
+  },
+
+  "dependencies": {
+    "nodemon": "^2.0.16",
+    "os-utils": "^0.0.14",
+    "parcel": "^1.12.4",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "recharts": "^2.1.10",
+    "socket.io": "^2.4.1",
+    "socket.io-client": "^2.4.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
