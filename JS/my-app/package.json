@@ -7,11 +7,10 @@
     "start:client": "parcel src/index.html",
     "start:server": "nodemon src/server.js"
   },
-
   "dependencies": {
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.19",
     "os-utils": "^0.0.14",
-    "parcel": "^1.12.4",
+    "parcel": "^1.12.3",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "recharts": "^2.1.10",
