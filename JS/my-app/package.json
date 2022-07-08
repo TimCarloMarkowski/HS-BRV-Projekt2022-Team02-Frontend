@@ -8,12 +8,12 @@
     "start:server": "nodemon src/server.js"
   },
   "dependencies": {
-    "nodemon": "^2.0.16",
+    "nodemon": "^2.0.19",
     "os-utils": "^0.0.14",
-    "parcel": "^1.12.4",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "recharts": "^2.1.12",
+    "parcel": "^1.12.3",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "recharts": "^2.1.10",
     "socket.io": "^2.4.1",
     "socket.io-client": "^2.5.0"
   },
