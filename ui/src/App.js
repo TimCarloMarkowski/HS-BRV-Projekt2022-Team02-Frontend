@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
 
 import {AgGridReact} from 'ag-grid-react';
@@ -16,7 +16,7 @@ function App() {
     {make: 'BMW', model: '4 Series', price: 50000}
   ]);
 
-  const [columnDefs, setColumnDefs] = useState([
+  const [columnDefs] = useState([
     {field: 'make'},
     {field: 'model'},
     {field: 'price'}
