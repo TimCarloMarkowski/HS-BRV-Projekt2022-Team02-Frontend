@@ -11,9 +11,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 function App() {
   
   const [rowData, setRowData] = useState([
-    {make: 'Ford', model: 'Focus', price: 40000},
-    {make: 'Toyota', model: 'Celica', price: 45000},
-    {make: 'BMW', model: '4 Series', price: 50000}
+
   ]);
 
   const [columnDefs] = useState([
