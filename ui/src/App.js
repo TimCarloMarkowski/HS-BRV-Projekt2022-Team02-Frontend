@@ -41,7 +41,7 @@ function App() {
   
   return (
     <div className='ag-theme-alpine'
-         style={{height: 500}}>
+         style={{height: 400}}>
       <AgGridReact
           rowData={rowData}
           columnDefs={columnDefs}
