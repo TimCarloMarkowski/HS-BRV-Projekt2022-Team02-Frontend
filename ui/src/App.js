@@ -17,9 +17,18 @@ function App() {
   ]);
 
   const [columnDefs] = useState([
-    {field: 'make'},
-    {field: 'model'},
-    {field: 'price'}
+    {field: 'YEAR'},
+    {field: 'MONTH'},
+    {field: 'DAY'},
+    {field: 'Customer'},
+    {field: 'OrderNumber'},
+    {field: 'OrderItem'},
+    {field: 'Product'},
+    {field: 'SalesQuantity'},
+    {field: 'UnitOfMeasure'},
+    {field: 'Revenue'},
+    {field: 'Currency'},
+    {field: 'Discount'}
   ]);
   
   const defaultColDef = useMemo( ()=> ({
@@ -28,7 +37,7 @@ function App() {
   }), []);
   
   useEffect(() => {
-    fetch('https://www.ag-grid.com/example-assets/row-data.json')
+    fetch('SalesData.json')
     .then(result => result.json())
     .then(rowData => setRowData(rowData))
   }, []);
