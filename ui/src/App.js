@@ -9,9 +9,7 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
 function App() {
   
-  const [rowData, setRowData] = useState([
-
-  ]);
+  const [rowData, setRowData] = useState([]);
 
   const [columnDefs] = useState([
     {field: 'YEAR'},
