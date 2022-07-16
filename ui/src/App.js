@@ -55,7 +55,7 @@ function App() {
   }), []);
   
   useEffect(() => {
-    fetch('SalesData.json')
+    fetch('Salesdata.json')
     .then(result => result.json())
     .then(rowData => setRowData(rowData))
   }, []);
