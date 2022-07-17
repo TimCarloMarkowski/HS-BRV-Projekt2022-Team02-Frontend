@@ -17,7 +17,6 @@ einem anderen Script, etc. exportiert wurden.
 */
 
 
-
 function App() {
   
   var chartPanelTemplate =
@@ -55,7 +54,7 @@ function App() {
   }), []);
   
   useEffect(() => {
-    fetch('Salesdata.json')
+    fetch('SalesData.json')
     .then(result => result.json())
     .then(rowData => setRowData(rowData))
   }, []);
