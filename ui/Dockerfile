@@ -1,4 +1,4 @@
-# Multi-stage
+# Multi-stage*
 # 1) Node image for building frontend assets
 # 2) nginx stage to serve frontend assets
 

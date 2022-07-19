@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <title>My chart.js chart</title>
+    </head>
+    <body>
+        <div class="container">
+            <canvas id="myChart"></canvas>
+        </div>
+
+        <script>
+            let myChart = document.getElementById('myChart').getContext('2d');
+
+            // Global options
+            
+            Chart.defaults.global.defaultFontFamily='Lato';
+            Chart.defaults.global.defaultFonrSize=18;
+            Chart.defaults.global.defaultFontColor='#777';
+
+            let massPopChart = new Chart(myChart, {
+                type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data:{
+                    labels:['Douala', 'Yaounde', 'Garoua', 'Kousseri', 'Bamenda'],
+                    datasets:[{
+                        label:'Population',
+                        data: [
+                            1338.082,
+                            1299.369,
+                            436.899,
+                            435.547,
+                            393,835
+                        ],
+                        // backgroundColor:'green'
+                        backgroundColor:[
+                            '#66CDAA',
+                            '#FF8C00',
+                            '#C71585',
+                            '#A0522D',
+                            '#008080'
+                        ],
+                        borderwidth:1,
+                        bordercolor:'#777',
+                        hoverBorderWidth:3,
+                        hoverBorderColor:'#000'
+
+                }]
+            },
+            Options:{
+                title:{
+                    display:true,
+                    text:'Largest Cities in Cameroon',
+                    fontSize: 50
+                },
+                legend:{
+                    display:true,
+                    position:'right',
+                    labels:{
+                        fontColor:'#000'
+                    }
+                },
+                layout:{
+                    padding:{
+                        left:50,
+                        right:0,
+                        bottom:0,
+                        top:0
+                    }
+                },
+                tooltips:{
+                    enabled:true
+                }
+            }
+            });
+        </script>
+
+    </body>
+</html>
