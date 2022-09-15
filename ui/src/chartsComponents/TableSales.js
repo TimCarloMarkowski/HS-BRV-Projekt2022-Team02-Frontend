@@ -1,4 +1,4 @@
-import React, {useEffect, useState ,useCallback, useMemo} from 'react';
+import React, {useEffect, useState, useCallback, useMemo} from 'react';
 
 import {AgGridReact} from 'ag-grid-react';  //AG-Grid Library
 import 'ag-grid-community/dist/styles/ag-grid.css';
@@ -98,4 +98,4 @@ const TableSales = () => {
         </div>
     );
 }
-    export default TableSales;
+export default TableSales;

@@ -43,11 +43,11 @@ const BarCharts = () => {
             <button>From Year</button>
             <input type={"number"}
                    value={from}
-                   onChange={evt => setFrom(Number(evt.target.value))} />
+                   onChange={evt => setFrom(Number(evt.target.value))}/>
             <button>To Year</button>
             <input type={"number"}
                    value={to}
-                   onChange={evt => setTo(Number(evt.target.value))} />
+                   onChange={evt => setTo(Number(evt.target.value))}/>
             <button onClick={getData}>Reload</button>
             <h1>Bar Chart</h1>
             <Bar
