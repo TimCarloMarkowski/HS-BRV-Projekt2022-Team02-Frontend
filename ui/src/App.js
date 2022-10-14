@@ -1,21 +1,20 @@
 import React from 'react';
-import './App.css';
-import './index.css';
+import { useContext } from "react";
 
-import BarCharts from './chartsComponents/BarCharts.js';
-import LineCharts from "./chartsComponents/LineCharts";
-import DoughnutCharts from "./chartsComponents/DoughnutCharts";
-import TableSales from "./chartsComponents/TableSales";
+import "./App.scss"
+import {DarkModeContext} from "./appComponents/context/darkModeContext";
+import Home from "./appComponents/home/Home";
 
 const App = () => {
+    const {darkMode} = useContext(DarkModeContext);
     return (
-        <div>
-            <BarCharts/>
-            <LineCharts/>
-            <DoughnutCharts/>
-            <TableSales/>
+        <div className={darkMode ? "app dark" : "app"}>
+            <div>
+                <Home />
+            </div>
         </div>
     )
+
 }
 
 export default App;

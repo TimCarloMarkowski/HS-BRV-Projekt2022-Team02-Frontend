@@ -1,34 +1,30 @@
 import React, {useEffect, useState} from 'react';
 
-import {
-    Chart as ChartJS,
-    CategoryScale,
-    LinearScale,
-    PointElement,
-    LineElement,
-    Title,
-    Tooltip,
-    Legend,
-    Filler
-} from 'chart.js';
+import "./barChart.scss"
 
-import {Line} from 'react-chartjs-2';
+import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip,} from 'chart.js';
+
+import {Bar} from 'react-chartjs-2';
 
 ChartJS.register(
     CategoryScale,
     LinearScale,
-    PointElement,
-    LineElement,
+    BarElement,
     Title,
     Tooltip,
-    Legend,
-    Filler
+    Legend
 );
 
-const LineCharts = () => {
+/**
+ * Create a Barchart using the Bar Charts Component,
+ *
+ */
+const BarCharts = () => {
 
+    /**
+     * State and Fetch Block
+     */
     const [data, setData] = useState({})
-
     const getData = async () => {
         const url = "http://localhost:3003/data/revenuePerYear.json";
         const res = await fetch(url)
@@ -43,10 +39,11 @@ const LineCharts = () => {
     })
 
     return (
-        <div>
-            <button onClick={getData}>Reload</button>
-            <h1>Line Chart</h1>
-            <Line
+
+        <div className="barC">
+            <button className="reloadButton" onClick={getData}>Reload</button>
+            <h3 className="barTitle">Bar Chart</h3>
+            <Bar
                 data={{
                     labels: Object.keys(data),
                     datasets: [
@@ -54,20 +51,15 @@ const LineCharts = () => {
                             label: "Sales",
                             data: Object.values(data),
                             backgroundColor: [
-                                'rgba(255, 206, 86, 2)',
-                                'rgba(75, 192, 192, 2)',
-                                'rgba(153, 102, 255, 2)',
-                                'rgba(255, 159, 200, 2)'
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
                             ],
-                            borderColor: "red",
+                            borderColor: 'black',
                             borderWidth: 2,
-                            tension: 0.4,
-                            fill: true,
-                            pointStyle: 'rect',
-                            pointBorderColor: 'blue',
-                            pointBackgroundColor: '#fff',
-                            showLine: true
-
                         },
                     ],
                 }}
@@ -77,7 +69,6 @@ const LineCharts = () => {
             />
         </div>
     );
-
 }
 
-export default LineCharts;
+export default BarCharts;

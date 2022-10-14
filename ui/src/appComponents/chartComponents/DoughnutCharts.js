@@ -1,5 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
+import "./doughnutChart.scss"
+
 import {
     Chart as ChartJS,
     ArcElement,
@@ -8,7 +10,7 @@ import {
     Legend,
 } from 'chart.js';
 
-import { Doughnut } from 'react-chartjs-2';
+import {Doughnut} from 'react-chartjs-2';
 
 ChartJS.register(
     ArcElement,
@@ -35,9 +37,10 @@ const DoughnutCharts = () => {
     })
 
     return (
-        <div>
-            <button onClick={getData}>Reload</button>
-            <h1>Doughnut Chart</h1>
+
+        <div className="doughnutC">
+            <button className="reloadButton" onClick={getData}>Reload</button>
+            <h3 className="doughnutTitle">Doughnut Chart</h3>
             <Doughnut
                 data={{
                     labels: Object.keys(data),

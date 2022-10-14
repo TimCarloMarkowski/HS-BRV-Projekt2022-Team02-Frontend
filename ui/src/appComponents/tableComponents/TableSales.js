@@ -4,6 +4,7 @@ import {AgGridReact} from 'ag-grid-react';  //AG-Grid Library
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 
+import "./tables.scss"
 
 /**
  Das import Statement wird verwendet um Funktionen,
@@ -22,7 +23,7 @@ const TableSales = () => {
         '<div class="chart-wrapper-body"></div>' +
         '</div>';
 
-    const containerStyle = useMemo(() => ({width: '100%', height: '100%'}), []);
+    // const containerStyle = useMemo(() => ({width: '100%', height: '100%'}), []);
     const gridStyle = useMemo(() => ({height: '300px', width: '100%'}), []);
 
     const [rowData, setRowData] = useState([]);
@@ -48,7 +49,7 @@ const TableSales = () => {
     }), []);
 
     useEffect(() => {
-        fetch('Salesdata.json')
+        fetch('http://localhost:3003/data/Salesdata.json')
             .then(result => result.json())
             .then(rowData => setRowData(rowData))
     }, []);
@@ -80,20 +81,17 @@ const TableSales = () => {
     );
 
     return (
-
-        <div style={containerStyle}>
-            <div id="container">
-                <div style={gridStyle} className="ag-theme-alpine">
-                    <AgGridReact //Component Properties
-                        enableCharts={true}
-                        rowData={rowData}
-                        columnDefs={columnDefs}
-                        defaultColDef={defaultColDef}
-                        enableRangeSelection={true}
-                        popupParent={popupParent}
-                        createChartContainer={createChartContainer}
-                    ></AgGridReact>
-                </div>
+        <div className="table">
+            <div style={gridStyle} className="ag-theme-alpine">
+                <AgGridReact
+                    enableCharts={true}
+                    rowData={rowData}
+                    columnDefs={columnDefs}
+                    defaultColDef={defaultColDef}
+                    enableRangeSelection={true}
+                    popupParent={popupParent}
+                    createChartContainer={createChartContainer}
+                ></AgGridReact>
             </div>
         </div>
     );
