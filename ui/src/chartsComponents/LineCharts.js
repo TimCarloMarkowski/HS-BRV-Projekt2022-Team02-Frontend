@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import "./LineCharts.css";
 
 import {
     Chart as ChartJS,
@@ -43,7 +44,7 @@ const LineCharts = () => {
     })
 
     return (
-        <div>
+        <div className='button'>
             <button onClick={getData}>Reload</button>
             <h1>Line Chart</h1>
             <Line
@@ -66,7 +67,8 @@ const LineCharts = () => {
                             pointStyle: 'rect',
                             pointBorderColor: 'blue',
                             pointBackgroundColor: '#fff',
-                            showLine: true
+                            showLine: true,
+                            
 
                         },
                     ],

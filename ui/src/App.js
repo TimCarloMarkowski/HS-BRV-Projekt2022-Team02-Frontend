@@ -1,18 +1,14 @@
 import React from 'react';
 import './App.css';
 import './index.css';
+import Button from './button.js';
 
-import BarCharts from './chartsComponents/BarCharts.js';
-import LineCharts from "./chartsComponents/LineCharts";
-import DoughnutCharts from "./chartsComponents/DoughnutCharts";
 import TableSales from "./chartsComponents/TableSales";
 
 const App = () => {
     return (
         <div>
-            <BarCharts/>
-            <LineCharts/>
-            <DoughnutCharts/>
+            <Button/>
             <TableSales/>
         </div>
     )
