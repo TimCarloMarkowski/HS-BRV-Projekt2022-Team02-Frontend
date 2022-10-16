@@ -1,7 +1,11 @@
-import './App.css';
+import React from 'react';
+import { useContext } from "react";
 
-import React, {useCallback, useState, useEffect, useMemo} from 'react'; 
+import "./App.scss"
+import {DarkModeContext} from "./appComponents/context/darkModeContext";
+import Home from "./appComponents/home/Home";
 
+HEAD
 import {AgGridReact} from 'ag-grid-react';  //AG-Grid Library                      
 
               
@@ -103,6 +107,17 @@ function App() {
   </div>
   </div>
   );
+
+const App = () => {
+    const {darkMode} = useContext(DarkModeContext);
+    return (
+        <div className={darkMode ? "app dark" : "app"}>
+            <div>
+                <Home />
+            </div>
+        </div>
+    )
+
 
 }
 

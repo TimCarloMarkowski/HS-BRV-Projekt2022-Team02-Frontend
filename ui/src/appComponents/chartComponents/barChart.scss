@@ -1,0 +1,17 @@
+.barC {
+  flex: 4;
+  padding: 10px;
+  color: gray;
+  width: 98%;
+
+  .reloadButton {
+    color: aqua;
+    background-color: black;
+  }
+
+  .barTitle {
+    margin-bottom: 20px;
+    text-align: center;
+
+  }
+}

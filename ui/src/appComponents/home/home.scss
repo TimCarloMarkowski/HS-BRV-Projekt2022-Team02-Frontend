@@ -1,0 +1,25 @@
+.home{
+  display: flex;
+
+  .homeContainer {
+    flex: 6;
+    .charts {
+      display: flex;
+      padding: 5px 20px;
+      gap: 20px;
+    }
+
+    .top {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6439ff;
+    }
+
+  }
+  .chartBottom{
+    bottom: 0;
+    float: bottom;
+  }
+}
