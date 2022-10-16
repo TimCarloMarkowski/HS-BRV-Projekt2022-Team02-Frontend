@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import "./LineCharts.css";
 
 import "./lineChart.scss"
 
@@ -46,15 +45,9 @@ const LineCharts = () => {
     })
 
     return (
- HEAD:ui/src/chartsComponents/LineCharts.js
-        <div className='button'>
-            <button onClick={getData}>Reload</button>
-            <h1>Line Chart</h1>
-
         <div className="lineC">
             <button className="reloadButton" onClick={getData}>Reload</button>
             <h3 className="lineTitle">Line Chart</h3>
- db99267264e81d68a8e70994651fa72890bedb3c:ui/src/appComponents/chartComponents/LineCharts.jsx
             <Line
                 data={{
                     labels: Object.keys(data),
@@ -76,19 +69,14 @@ const LineCharts = () => {
                             pointBorderColor: 'blue',
                             pointBackgroundColor: '#fff',
                             showLine: true,
-<<<<<<< HEAD:ui/src/chartsComponents/LineCharts.js
-                            
-
-
                             height: 657.6
- db99267264e81d68a8e70994651fa72890bedb3c:ui/src/appComponents/chartComponents/LineCharts.jsx
                         },
                     ],
                 }}
             />
         </div>
-    )
+    );
 
-};
+}
 
-export default LineCharts;
+export default LineCharts; 
