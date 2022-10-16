@@ -1,0 +1,19 @@
+.polararea {
+  float: right;
+  -webkit-box-shadow: 2px 4px 10px 1px;
+  box-shadow: 2px 4px 10px 1px;
+  padding: 10px;
+  color: gray;
+  width: 505px;
+
+  .reloadButton {
+    color: aqua;
+    background-color: black;
+  }
+
+  .polarareaTitle {
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+}

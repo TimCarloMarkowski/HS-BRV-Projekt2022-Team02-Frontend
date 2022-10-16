@@ -1,7 +1,11 @@
-import './App.css';
+import React from 'react';
+import { useContext } from "react";
 
-import React, {useCallback, useState, useEffect, useMemo} from 'react'; 
+import "./App.scss"
+import {DarkModeContext} from "./appComponents/context/darkModeContext";
+import Home from "./appComponents/home/Home";
 
+HEAD
 import {AgGridReact} from 'ag-grid-react';  //AG-Grid Library                      
 
               
@@ -15,7 +19,6 @@ Das import Statement wird verwendet um Funktionen,
 Objekte und Primitives zu importieren die von einem externen Modul, 
 einem anderen Script, etc. exportiert wurden.
 */
-
 
 
 function App() {
@@ -55,7 +58,7 @@ function App() {
   }), []);
   
   useEffect(() => {
-    fetch('Salesdata.json')
+    fetch('SalesData.json')
     .then(result => result.json())
     .then(rowData => setRowData(rowData))
   }, []);
@@ -105,6 +108,17 @@ function App() {
   </div>
   </div>
   );
+
+const App = () => {
+    const {darkMode} = useContext(DarkModeContext);
+    return (
+        <div className={darkMode ? "app dark" : "app"}>
+            <div>
+                <Home />
+            </div>
+        </div>
+    )
+
 
 }
 
