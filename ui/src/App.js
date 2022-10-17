@@ -28,6 +28,7 @@
   color: #61dafb;
 }
 
+<<<<<<< HEAD
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -39,3 +40,17 @@
 
 
 } 
+=======
+const App = () => {
+    const {darkMode} = useContext(DarkModeContext);
+    return (
+        <div className={darkMode ? "app dark" : "app"}>
+            <div>
+                <Home />
+            </div>
+        </div>
+    )
+  }
+}
+export default App;
+>>>>>>> 16dbfeccf5ceae08e99ae4c799fae64418ac58c9
