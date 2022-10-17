@@ -90,7 +90,6 @@ function App() {
   );
 
   return (
-      
     
     <div style={containerStyle}>
       <div id="container">
@@ -119,7 +118,6 @@ const App = () => {
         </div>
     )
 
-
 }
 
-export default App;
+export default App; 
