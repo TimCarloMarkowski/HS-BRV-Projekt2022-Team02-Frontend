@@ -3,10 +3,9 @@ import React, {useEffect, useState, useCallback, useMemo} from 'react';
 import {AgGridReact} from 'ag-grid-react';  //AG-Grid Library
 import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
-
 import "./tables.scss"
 
-let data = JSON.parse('http://localhost:1339/sales')
+let data = JSON.parse('http://localhost:1339/products')
 let content = data.content  
 
 /**
@@ -15,7 +14,7 @@ let content = data.content
  einem anderen Script, etc. exportiert wurden.
  */
 
-const TableSales = () => {
+const TableProducts = () => {
 
     var chartPanelTemplate =
         '<div class="chart-wrapper ag-theme-alpine">' +
@@ -33,31 +32,30 @@ const TableSales = () => {
 
     const [columnDefs] = useState([
         {field: 'id'}, 
-        {field: 'year'},
-        {field: 'month'},
-        {field: 'day'},
-        {field: 'customer'},
-        {field: 'orderNumber'},
-        {field: 'orderItem'},
-        {field: 'salesQuantity'},
-        {field: 'unitOfMeasure'},
-        {field: 'revenue'},
-        {field: 'currency'},
-        {field: 'discount'},
+        {field: 'ident'},
+        {field: 'description'},
+        {field: 'category'},
+        {field: 'division'},
+        {field: 'color'},
+        {field: 'internalPrice'},
+        {field: 'salesPrice'},
+
     ]);
 
     const defaultColDef = useMemo(() => ({
         sortable: true,
         filter: true
     }), []);
-
+    
     useEffect(() => {
+
         fetch(content)
-            .then(result => result.json())
-            .then(rowData => setRowData(rowData))
-    }, []);
+        .then(result => result.json())
+        .then(rowData => setRowData(rowData))
 
+}, []);
 
+                    
     const popupParent = useMemo(() => {
         return document.body;
     }, []);
@@ -99,4 +97,4 @@ const TableSales = () => {
         </div>
     );
 }
-export default TableSales;
+export default TableProducts;
