@@ -5,8 +5,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import "./tables.scss"
 
-let data = JSON.parse('http://localhost:1339/products')
-let content = data.content  
+
 
 /**
  Das import Statement wird verwendet um Funktionen,
@@ -49,9 +48,9 @@ const TableProducts = () => {
     
     useEffect(() => {
 
-        fetch(content)
+        fetch('http://localhost:1339/products')
         .then(result => result.json())
-        .then(rowData => setRowData(rowData))
+        .then(rowData => setRowData(rowData.content))
 
 }, []);
 
