@@ -26,7 +26,7 @@ const BarCharts = () => {
      */
     const [data, setData] = useState({})
     const getData = async () => {
-        const url = "http://localhost:3003/data/revenuePerYear.json";
+        const url = "sale.json";
         const res = await fetch(url)
         // wait until the Request has been completed
         const datapoints = await res.json()

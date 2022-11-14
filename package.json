@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "parse": "^3.5.0",
+    "parsing": "^2.3.0",
+    "react-router-dom": "^6.4.3"
+  }
+}
