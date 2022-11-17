@@ -43,6 +43,8 @@ const TableSales = () => {
         {field: 'revenue'},
         {field: 'currency'},
         {field: 'discount'},
+        {field: 'date'},
+  
     ]);
 
     const defaultColDef = useMemo(() => ({
@@ -51,7 +53,7 @@ const TableSales = () => {
     }), []);
 
     useEffect(() => {
-            fetch('http://localhost:1339/sales')
+            fetch('http://localhost:1339/sales?page=10&size=10')
             .then(result => result.json())
             .then(rowData => setRowData(rowData.content))
     }, []);

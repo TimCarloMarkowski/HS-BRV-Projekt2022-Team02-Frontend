@@ -39,4 +39,22 @@
   input {
     background-color: transparent;
   }
+
+}
+#tableProducts  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#top {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6439ff;
 }
