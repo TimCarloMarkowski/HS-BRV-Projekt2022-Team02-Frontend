@@ -26,7 +26,7 @@ const BarCharts = () => {
      */
     const [data, setData] = useState({})
     const getData = async () => {
-        const url = "sale.json";
+        const url = "http://localhost:1339/sales?page=400&size=100";
         const res = await fetch(url)
         // wait until the Request has been completed
         const datapoints = await res.json()
@@ -42,7 +42,6 @@ const BarCharts = () => {
 
         <div className="barC">
             <button className="reloadButton" onClick={getData}>Reload</button>
-            <h3 className="barTitle">Bar Chart</h3>
             <Bar
                 data={{
                     labels: Object.keys(data),
