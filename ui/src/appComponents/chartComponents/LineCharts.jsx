@@ -1,29 +1,34 @@
 import React, {useEffect, useState} from 'react';
 
-import "./barChart.scss"
-//import daten from "./../sale.json";
-import {BarElement, CategoryScale, Chart as ChartJS, Legend, LinearScale, Title, Tooltip,} from 'chart.js';
+import "./LineChart.scss"
 
-import {Bar} from 'react-chartjs-2';
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+    Filler
+} from 'chart.js';
+
+import {Line} from 'react-chartjs-2';
 
 ChartJS.register(
     CategoryScale,
     LinearScale,
-    BarElement,
+    PointElement,
+    LineElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
+    Filler
 );
 
-/**
- * Create a Barchart using the Bar Charts Component,
- *
- */
-const BarCharts = () => {
+const LineCharts = () => {
 
-    /**
-     * State and Fetch Block
-     */
     const [data, setData] = useState({})
     const [id, setId] = useState([])
     const [sales, setSales] = useState([])
@@ -48,51 +53,39 @@ const BarCharts = () => {
         }
     })
 
-    /* test function 
-    // returns array of unique values matching accessor
-    const extractIdUndSales = (jsondata, id, sales) => {
-
-        // push only keys matching accessor into new array
-        jsondata.forEach((d) => {
-        id.push(d.id);
-        sales.push(d.salesPrice);
-        });
-    
-    }
-
-    //extractIdUndSales(data, id, sales)
-    */
-
     return (
-
-        <div className="barC">
+        <div className="lineC">
             <button className="reloadButton" onClick={getData}>Reload</button>
-            <Bar
+            <h3 className="lineTitle">Line Chart</h3>
+            <Line
                 data={{
-                    labels: id,//Object.keys(data),
+                    labels: id, //Object.keys(data),
                     datasets: [
                         {
                             label: "Sales",
                             data: sales, //Object.values(data),
                             backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
+                                'rgba(255, 206, 86, 2)',
+                                'rgba(75, 192, 192, 2)',
+                                'rgba(153, 102, 255, 2)',
+                                'rgba(255, 159, 200, 2)'
                             ],
-                            borderColor: 'black',
+                            borderColor: "red",
                             borderWidth: 2,
+                            tension: 0.4,
+                            fill: true,
+                            pointStyle: 'rect',
+                            pointBorderColor: 'blue',
+                            pointBackgroundColor: '#fff',
+                            showLine: true,
+                            height: 657.6
                         },
                     ],
                 }}
-                height={300}
-                width={700}
-
             />
         </div>
     );
+
 }
 
-export default BarCharts;
+export default LineCharts; 

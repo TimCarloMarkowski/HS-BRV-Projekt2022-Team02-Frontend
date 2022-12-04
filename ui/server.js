@@ -1,10 +1,10 @@
-const express = require('express')
+/* const express = require('express')
 const axios = require('axios')
 
 const app = express()
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:1339/products',
+    baseURL: 'http://localhost:3000',//1339/products',
     header: { 'Access-Control-Allow_Origin': '*' }
 })
 app.get("/", async (req, res, next) => {
@@ -22,4 +22,13 @@ app.get("/", async (req, res, next) => {
 
 app.listen(3003, () => {
     console.log('listening on port 3003')
-}) 
+})  */
+const express = require("express")
+const cors = require("cors")
+
+const server = express()
+server.use(cors())
+
+server.use("/data", express.static(__dirname + "/data/"))
+
+server.listen(3003)
