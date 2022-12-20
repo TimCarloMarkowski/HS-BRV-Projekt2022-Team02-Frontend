@@ -39,4 +39,64 @@
   input {
     background-color: transparent;
   }
+
+}
+#tableProducts  {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 20px;
+}
+#table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 20px;
+}
+#top {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b50792;
+  box-shadow: rgba(133, 5, 99, 0.24) 0px 3px 8px;
+}
+.diagram{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chart1 {
+  flex: 1;
+  display: inline-block ;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 20px;
+  height: 450px;
+}
+.chart2 {
+  flex: 1;
+  display: inline-block ;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin-right: 20px;
+  height: 450px;
+}
+.selectmenu{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.buttonSpace{
+  margin-left:20px ;
+  margin-right: 20px;
 }

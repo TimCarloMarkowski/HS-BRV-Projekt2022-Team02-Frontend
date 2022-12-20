@@ -1,5 +1,3 @@
-import React, {useEffect, useState} from 'react';
-
 import "./lineChart.scss"
 
 import {
@@ -27,34 +25,18 @@ ChartJS.register(
     Filler
 );
 
-const LineCharts = () => {
-
-    const [data, setData] = useState({})
-
-    const getData = async () => {
-        const url = "http://localhost:3003/data/revenuePerYear.json";
-        const res = await fetch(url)
-        // wait until the Request has been completed
-        const datapoints = await res.json()
-        setData(datapoints)
-    }
-    useEffect(() => {
-        if (data === {}) {
-            getData()
-        }
-    })
+const LineCharts = ({x_values, y_values}) => {
 
     return (
         <div className="lineC">
-            <button className="reloadButton" onClick={getData}>Reload</button>
             <h3 className="lineTitle">Line Chart</h3>
             <Line
                 data={{
-                    labels: Object.keys(data),
+                    labels: x_values, //Object.keys(data),
                     datasets: [
                         {
-                            label: "Sales",
-                            data: Object.values(data),
+                            label: "SalesData",
+                            data: y_values, //Object.values(data),
                             backgroundColor: [
                                 'rgba(255, 206, 86, 2)',
                                 'rgba(75, 192, 192, 2)',
